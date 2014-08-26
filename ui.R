@@ -6,11 +6,13 @@ shinyUI(fluidPage(
              ),
   sidebarPanel(h1("Original Link"),
                textInput("oldlink", "URL: ", "http://www.youtube.com/"),
+               textInput("whole_time", "whole length: ", "h:m:s"),
                numericInput("div_time", "video length (min): ", 3, min = 0),
                numericInput("ovl_time", "overlay time (sec): ", 30, min = 0),
                p(actionButton("sliceButton", "Slice!"))
                ),
   mainPanel(h1("Sliced Links:"),
-            textOutput("newlinks")
+            #textOutput("newlinks")
+            htmlOutput("newlinks")
             )
 ))
