@@ -1,0 +1,3 @@
+ - 首先取得整理好的直播網址 (in csv format, "youtube_list_test.csv" as an example)
+ - run "youtube_slicer.R" (想學 R 嗎？到隔壁的場子吧！)
+ - 得到結果："output.txt"，地方的影片需要逐字稿
