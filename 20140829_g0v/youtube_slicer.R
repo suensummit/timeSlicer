@@ -1,4 +1,6 @@
 rm(list = ls())
+# install.packages('stringr')
+library(stringr)
 
 ## load data
 youtube_list <- read.table('youtube_list_test.csv', sep = ',', skip = 4)
@@ -25,10 +27,10 @@ for (i in 1:length(youtube_list$duration)) {
 youtube_list <- cbind(youtube_list, as.numeric(temp))
 names(youtube_list)[3] <- 'sec'
 
-## split into several 5 minutes, 30 seconds overlay short clips
-div <- 5
+## split into several 3 minutes, 30 seconds overlay short clips
+div <- 3
 overlay <- 30
-fileConn <- file("output.txt", open = 'w+')
+fileConn <- file("output3.txt", open = 'w+')
 for (j in 1:length(youtube_list$sec)) {
   ndiv <- ceiling(youtube_list$sec[j] / (div*60))
   for (i in 1:ndiv) {
